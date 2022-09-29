@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+    frontend-development:
+        container_name: frontend-development-builder
+        build:
+            context: .
+            dockerfile: Dockerfile
+        command: npm run build:dev
+        volumes:
+            - ./dist:/app/dist:rw
